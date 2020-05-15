@@ -17,7 +17,7 @@ $(document).ready(function() {
     })
 
     $(".newGrid").click(function() {
-        refreshGrid();
+        promptUser();
 
         $(".grid").mouseover(function() {
             $(this).css("background-color", "pink");
@@ -25,5 +25,12 @@ $(document).ready(function() {
     })
 })
 
+clearGrid = () => {
+    $(".grid").remove();
+}
 
-
+promptUser = () => {
+    let userPrompt = prompt("How many boxes per side?");
+    clearGrid();
+    createGrid(userPrompt);
+}
